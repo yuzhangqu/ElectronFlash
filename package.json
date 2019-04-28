@@ -1,0 +1,37 @@
+{
+  "name": "flash",
+  "version": "1.0.0",
+  "description": "武汉市珠心算训练程序",
+  "main": "main.js",
+  "build": {
+    "appId": "org.qingling.app",
+    "productName": "武汉市珠心算训练",
+    "mac": {
+      "target": [
+        "dmg",
+        "zip"
+      ]
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "zip"
+      ]
+    }
+  },
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win --ia32"
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "Electron",
+    "Flash"
+  ],
+  "author": "GitHub",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^5.0.0",
+    "electron-builder": "^20.39.0"
+  }
+}

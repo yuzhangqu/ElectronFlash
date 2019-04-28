@@ -1,0 +1,98 @@
+@font-face {
+    font-family: "Droid";
+    src: url('../fonts/Droid.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Kameron";
+    src: url('../fonts/Kameron.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.fullheight {
+    height: 100%;
+}
+
+.blackwhite {
+    background-color: #000;
+    color: #FFF;
+}
+
+.whitetop {
+    border-top: 3px solid #FFF;
+}
+
+.blackgrey {
+    background-color: #000;
+    color: #333;
+}
+
+.form-control:focus {
+    border-color: #333;
+    background-color: #000;
+}
+
+.negative {
+    padding-right: 7.7vw;
+}
+
+.negative-hubei {
+    padding-right: 6.2vw;
+}
+
+.negative-15vw {
+    padding-right: 4.7vw;
+}
+
+.init {
+    width: 100%;
+    left: 0;
+    position: absolute;
+    -webkit-clip-path: inset(0 0 0 50%);
+    clip-path: inset(0 0 0 50%);
+}
+
+.spin {
+    transition: transform 0.5s linear;
+}
+
+.init span {
+    width: 30vw;
+    height: 30vw;
+    border-radius: 50%;
+    background: #000;
+    display: block;
+    position: absolute;
+    left: 50%;
+    margin-left: -15vw;
+    top: 50%;
+    margin-top: -15vw;
+    overflow: hidden;
+    -webkit-clip-path: inset(0 50% 0 0);
+    clip-path: inset(0 50% 0 0);
+}
+
+.init span:nth-of-type(2) {
+    transform: rotate(180deg);
+    opacity: 0;
+}
+
+.init.part1 span:nth-of-type(1) {
+    transform: rotate(180deg);
+}
+
+.init.part1.part2 {
+    -webkit-clip-path: inset(0 0 0 0);
+    clip-path: inset(0 0 0 0);
+}
+
+.init.part1.part2 span:nth-of-type(1) {
+    transform: rotate(360deg);
+}
+
+.init.part1.part2 span:nth-of-type(2) {
+    opacity: 1;
+}
