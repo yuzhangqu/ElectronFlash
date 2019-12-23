@@ -12,6 +12,7 @@ function createWindow () {
     minHeight:600,
     width: 1920,
     height: 1080,
+    fullscreen: true,
     autoHideMenuBar: true,
     webPreferences: {
       nodeIntegration: false
@@ -19,7 +20,7 @@ function createWindow () {
   })
 
   // and load the index.html of the app.
-  mainWindow.loadFile('index.html')
+  mainWindow.loadFile('htmls/single.html')
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()

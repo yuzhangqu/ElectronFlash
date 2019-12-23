@@ -21,7 +21,7 @@
   },
   "scripts": {
     "start": "electron .",
-    "dist": "electron-builder --win --ia32"
+    "dist": "electron-builder --win --x64"
   },
   "repository": "https://github.com/yuzhangqu/ElectronFlash",
   "keywords": [
@@ -31,7 +31,7 @@
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^5.0.0",
-    "electron-builder": "^20.39.0"
+    "electron": "^7.0.0",
+    "electron-builder": "^21.2.0"
   }
 }

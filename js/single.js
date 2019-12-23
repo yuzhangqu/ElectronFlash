@@ -6,45 +6,49 @@ function Single(total, time) {
 }
 
 Single.prototype.nextNum = function(old) {
-    var ok = false;
     var temp = 0;
     do {
-        temp = Math.floor(Math.random() * 10);
-        if (temp == 0 || temp == old) {
-            ok = false;
-        }
-        else{
-            if (this.answer + temp < 10) {
-                ok = true;
-            }
-            else if (this.answer >= temp) {
-                ok = true;
-                temp = 0 - temp;
+        if (this.answer < 5) {
+            if (randomInt(0, 8 - this.answer) >= this.answer) {
+                temp = randomInt(0, 4 - this.answer);
+                if (temp == 0 || randomInt(0, 1)) {
+                    temp += 5;
+                }
             }
             else {
-                ok = false;
+                temp = 0 - randomInt(1, this.answer);
             }
         }
-    } while (!ok)
+        else {
+            if (randomInt(0, this.answer - 1) >= 9 - this.answer) {
+                temp = 0 - randomInt(0, this.answer - 5);
+                if (temp == 0 || randomInt(0, 1)) {
+                    temp -= 5;
+                }
+            }
+            else {
+                temp = randomInt(1, 9 - this.answer);
+            }
+        }
+    } while (temp == old)
     
     return temp;
 }
 
 Single.prototype.generate = function() {
-    var index = 0;
     var old = 0;
-
     for (var i = 0; i < this.total; i++) {
         var temp = this.nextNum(old);
-        old = temp;
-        this.nums[index++] = temp;
+        this.nums[i] = temp;
         this.answer += temp;
+        old = temp;
     }
 }
 
-var timegap = [0, 0.6, 0.7, 0.9, 1];
+var timegap = [0, 6, 7, 9, 10, 12];  // 0.几秒
 var headText = "直加直减闪电心算 -";
 var numVal = 10; // 总笔数
+var speed = timegap[1];  // 一笔0.几秒
 
 function init() {
     showTitle();
@@ -104,14 +108,14 @@ function showAnswer() {
 }
 
 function showTitle() {
-    $(".card-header").text(headText + " " + numVal + "笔 ");
+    $(".card-header").text(headText + " " + numVal + "笔 " + speed/10 + "秒/笔");
 }
 
 function go() {
     if ($("#go").hasClass("disabled")) {
         return false;
     }
-    quiz = new Single(numVal, numVal * 0.4);
+    quiz = new Single(numVal, numVal * speed / 10);
     quiz.generate();
     showTitle();
     removetips(25);
@@ -119,4 +123,28 @@ function go() {
     $(".fa").addClass("fa-spin");
     setTimeout(repeat(0, 3, 1000, showCount), 0);
     setTimeout(repeat(0, 3, 1000, showMask), 0);
+}
+
+function speedup() {
+    if ($("#go").hasClass("disabled")) {
+        return false;
+    }
+
+    if (speed <= 1) {
+        return false;
+    }
+    speed -= 1;
+    showTitle();
+}
+
+function slowdown() {
+    if ($("#go").hasClass("disabled")) {
+        return false;
+    }
+
+    if (speed >= 99) {
+        return false;
+    }
+    speed += 1;
+    showTitle();
 }

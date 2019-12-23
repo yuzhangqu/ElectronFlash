@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" class="fullheight">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <title>武汉市珠心算训练</title>
+  </head>
+  <body class="fullheight" onload="init();">
+    <div class="card card-inverse text-center fullheight blackwhite">
+        <div class="card-header" style="font-size: 5vw"></div>
+        <div class="card-block" style="display: flex;" onclick="showAnswer();">
+            <div class="init">
+                <span class="spin"></span>
+                <span class="spin"></span>
+            </div>
+            <h1 class="card-text" style="margin: auto; font-size: 25vw; font-family: 'Droid'; color: #FFF"></h1>
+        </div>
+        <div class="card-footer text-muted">
+            <div class="row mb-1">
+                <div class="col">
+                    <div id="digit_selector" class="btn-group btn-group-md">
+                        <button type="button" class="btn btn-outline-primary active" value="1">1位</button>
+                        <button type="button" class="btn btn-outline-primary" value="2">2位</button>
+                        <button type="button" class="btn btn-outline-primary" value="3">3位</button>
+                        <button type="button" class="btn btn-outline-primary" value="4">4位</button>
+                        <button type="button" class="btn btn-outline-primary" value="5">5位</button>
+                    </div>
+                </div>
+                <div class="col">
+                    <div id="num_selector" class="btn-group btn-group-md">
+                        <button type="button" class="btn btn-outline-success" value="5">5笔</button>
+                        <button type="button" class="btn btn-outline-success active" value="10">10笔</button>
+                        <button type="button" class="btn btn-outline-success" value="15">15笔</button>
+                        <button type="button" class="btn btn-outline-success" value="20">20笔</button>
+                    </div>
+                </div>
+                <div class="col">
+                    <div id="mix_selector" class="btn-group btn-group-md">
+                        <button type="button" class="btn btn-outline-warning active" value="0">纯加</button>
+                        <button type="button" class="btn btn-outline-warning" value="1">混合</button>
+                    </div>
+                </div>
+                <div class="col">
+                    <div id="speed_selector" class="btn-group btn-group-md">
+                        <button type="button" class="btn btn-outline-danger" onclick="slowdown();">减速</button>
+                        <button type="button" class="btn btn-outline-danger" onclick="speedup();">加速</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button id="go" type="button" class="btn btn-outline-danger" onclick="go();"><i class="fa fa-3x fa-play-circle-o" aria-hidden="true"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="../js/jquery-3.2.0.min.js"></script>
+    <script src="../js/tether.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.number.min.js"></script>
+    <script src="../js/Group.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/wuhan.js"></script>
+    <script src="../js/beep.js"></script>
+  </body>
+</html>
