@@ -31,7 +31,7 @@ function init() {
     quizArray.push(new Group(4, 10, 1, 3, 10));
     quizArray.push(new Group(4, 15, 1, 0, 13));
     quizArray.push(new Group(4, 15, 1, 5, 13));
-    var content = "第1题,第2题,第3题,第4题,第5题,第6题,第7题,第8题\r\n";
+    var content = "\uFEFF第1题,第2题,第3题,第4题,第5题,第6题,第7题,第8题\r\n";
     quizArray.forEach(function(item, index, array) {
         item.generate(1);
         content += item.answer;
