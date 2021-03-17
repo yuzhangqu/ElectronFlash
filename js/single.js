@@ -152,3 +152,7 @@ function slowdown() {
 function gameover() {
     window.close();
 }
+
+function switchpage() {
+    window.location.href = "wuhan.html";
+}
