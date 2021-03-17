@@ -120,7 +120,7 @@ function go() {
     showTitle();
     removetips(25);
     $("#go").addClass("disabled");
-    $(".fa").addClass("fa-spin");
+    $(".fa-play-circle-o").addClass("fa-spin");
     setTimeout(repeat(0, 3, 1000, showCount), 0);
     setTimeout(repeat(0, 3, 1000, showMask), 0);
 }
@@ -147,4 +147,8 @@ function slowdown() {
     }
     speed += 1;
     showTitle();
+}
+
+function gameover() {
+    window.close();
 }

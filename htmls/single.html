@@ -31,14 +31,19 @@
                     </div>
                     <div class="col">
                         <div id="speed_selector" class="btn-group btn-group-md">
-                            <button type="button" class="btn btn-outline-danger" onclick="slowdown();">减速</button>
-                            <button type="button" class="btn btn-outline-danger" onclick="speedup();">加速</button>
+                            <button type="button" class="btn btn-outline-warning" onclick="slowdown();">减速</button>
+                            <button type="button" class="btn btn-outline-warning" onclick="speedup();">加速</button>
                         </div>
                     </div>
                 </div>
                 <div class="row">
+                    <div class="col-1">
+                    </div>
                     <div class="col">
-                        <button id="go" type="button" class="btn btn-outline-danger" onclick="go();"><i class="fa fa-3x fa-play-circle-o" aria-hidden="true"></i></button>
+                        <button id="go" type="button" class="btn btn-outline-secondary" onclick="go();"><i class="fa fa-3x fa-play-circle-o" aria-hidden="true"></i></button>
+                    </div>
+                    <div class="col-1">
+                        <button id="gameover" type="button" class="btn btn-outline-danger" onclick="gameover();"><i class="fa fa-3x fa-times-circle-o" aria-hidden="true"></i></button>
                     </div>
                 </div>
             </div>
