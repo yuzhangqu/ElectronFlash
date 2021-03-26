@@ -95,7 +95,7 @@ function go() {
     removetips(25);
     quiz.generate(mixIndex);
     $("#go").addClass("disabled");
-    $(".fa").addClass("fa-spin");
+    $(".fa-play-circle-o").addClass("fa-spin");
     setTimeout(repeat(0, 3, 1000, showCount), 0);
     setTimeout(repeat(0, 3, 1000, showMask), 0);
 }
