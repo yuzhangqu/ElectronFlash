@@ -63,7 +63,7 @@ function showCount(begin, end) {
         if (begin < end - 1) {
             beep1();
         } else {
-            beep2();
+            beep1();
         }
     }
 }
